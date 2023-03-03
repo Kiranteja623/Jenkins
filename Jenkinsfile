@@ -9,7 +9,6 @@ pipeline {
     }
     stage('build the  package') {
       steps {
-          sh 'cd /openmrs-core'
           sh 'mvn clean package'
       }
     }
