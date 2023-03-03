@@ -1,0 +1,20 @@
+pipeline {
+  agent any
+  stages {
+    stage('git') {
+      steps {
+          sh 'git --version'
+      }
+    }
+    stage('maven') {
+      steps {
+          sh 'mvn --version'
+      }
+    }
+    stage('k8s') {
+      steps {
+          sh 'kubectl --version'
+      }
+    }
+  }
+ }
