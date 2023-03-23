@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent { node { label 'ubuntu' } }
   stages {
     stage('git clone') {
       steps {
@@ -7,9 +7,10 @@ pipeline {
                 branch 'declarative'
             }
     }
-    stage('build the  package') {
-      steps {
-          sh 'mvn clean package'
-      }
+    stage('build') {
+    steps {
+        sh 'mvn clean package'
     }
-  }}
+  }
+  }
+}
